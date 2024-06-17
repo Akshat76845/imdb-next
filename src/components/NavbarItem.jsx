@@ -5,11 +5,10 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
 export default function NavbarItem({ title, param, extraClasses = "" }) {
-  const [searchParams, setSearchParams] = useSearchParams();
-
   return (
     <Suspense>
       {() => {
+        const searchParams = useSearchParams();
         const genre = searchParams.get("genre");
 
         return (
